@@ -1,3 +1,4 @@
+- install MySQL (https://dev.mysql.com/downloads/installer/)
 - install php (https://www.php.net/downloads.php) to a high-level directory, such as C:\PHP
 - add installed php directory to your PATH
 - open terminal/command line/whatever
