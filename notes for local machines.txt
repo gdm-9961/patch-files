@@ -1,0 +1,6 @@
+- install php (https://www.php.net/downloads.php) to a high-level directory, such as C:\PHP
+- add installed php directory to your PATH
+- open terminal/command line/whatever
+- cd to directory containing "app.php" (\Penguin-Pages\virtualbookclub\, in this repository)
+- run "php -S 127.0.0.1:{PORT}", with PORT being any open port (such as 8000)
+- visit 127.0.0.1:{PORT} in your browser
