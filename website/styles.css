@@ -154,6 +154,12 @@ header {
   padding-right: 100px;
 }
 
+.book-descript{
+  font-size: 13px;
+  padding-top: 10px;
+  padding-right: 100px;
+}
+
 .next-discush{
   color: #888888;
   margin-top: 6px;
@@ -165,7 +171,7 @@ header {
   justify-content: flex-end;
 }
 
-.open-btn, .join-btn {
+.open-btn, .join-btn, .find-btn {
   background-color: #572020;
   color: white;
   padding: 10px 16px;
@@ -332,4 +338,14 @@ textarea {
   border-radius: 20px;
   font-size: 14px;
   margin-top: 20px 0px;
+}
+
+.book-number{
+  margin-bottom: 16px;
+  font-weight: 600;
+  color: #555555;
+}
+
+#map{
+  width: 100%;
 }
