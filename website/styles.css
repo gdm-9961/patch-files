@@ -6,13 +6,17 @@
 }
 
 .logo{
-    width: 16%;
+    width: 20%;
+    padding-bottom: 40px;
+}
 
+.page-heading{
+  font-weight: 600;
+  padding-bottom: 40px;
 }
 
 h2{
   font-weight: 600;
-  padding-bottom: 40px;
 }
 
 body {
@@ -74,7 +78,7 @@ header {
   display: flex;
   justify-content: end;
   align-items: center;
-  padding: 20px 30px;
+  padding: 30px;
   position: fixed;
   top: 0;
   left: 80px;
@@ -97,7 +101,10 @@ header {
 }
 
 .icons {
-  font-size: 24px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 28px;
   cursor: pointer;
   color: #572020;
 }
@@ -114,33 +121,49 @@ header {
   color: #572020;
 }
 
-.club-card{
-  background-color: #fcfcfc;
-  border-radius: 20px;
-  padding: 40px;
-  flex-direction: row;
+.club-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 24px;
+  background-color: #f9f9f6;
+  border-radius: 16px;
+  margin-bottom: 20px;
 }
 
-.mission{
-  padding-top: 20px;
-  padding-bottom: 20px;
-  color: #572020;
-  size: 12px;
-}
-
-#beams{
-  width: 120px;
-  height: 180px;
-}
-
-.join-btn{
-  padding: 10px 20px;
+.book-cover {
+  width: 120px; /* control size */
+  height: auto;
   border-radius: 8px;
-  color: white;
+  flex-shrink: 0;
+}
+
+.club-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.club-descript{
+  font-size: 13px;
+  padding: 10px;
+}
+
+.button-wrapper {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.open-btn, .join-btn {
   background-color: #572020;
+  color: white;
+  padding: 10px 16px;
   border: none;
-  font-weight: 600;
+  border-radius: 8px;
+  font-weight: bold;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .profile-container {
