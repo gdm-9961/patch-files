@@ -12,7 +12,7 @@
 
 .page-heading{
   font-weight: 600;
-  padding-bottom: 40px;
+  padding-bottom: 60px;
 }
 
 h2{
@@ -72,10 +72,14 @@ body {
 }
 
 .main-content {
-  margin-left: 300px;
+  margin-left: 140px;
   padding-top: 140px;
   padding-right: 100px;
   flex-grow: 1;
+}
+
+.sidebar:hover ~ .main-content{
+  margin-left: 300px;
 }
 
 header {
@@ -133,10 +137,25 @@ header {
   background-color: #f9f9f6;
   border-radius: 16px;
   margin-bottom: 20px;
+  max-width: 1200px;
 }
 
 .book-cover {
+  width: 140px;
+  height: auto;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.book-cover-medium {
   width: 110px;
+  height: auto;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.book-cover-big{
+  width: 220px;
   height: auto;
   border-radius: 8px;
   flex-shrink: 0;
@@ -152,12 +171,15 @@ header {
   font-size: 13px;
   padding-top: 10px;
   padding-right: 100px;
+  color: #444
 }
 
 .book-descript{
   font-size: 13px;
   padding-top: 10px;
+  padding-bottom: 10px;
   padding-right: 100px;
+  color: #444;
 }
 
 .next-discush{
@@ -171,7 +193,7 @@ header {
   justify-content: flex-end;
 }
 
-.open-btn, .join-btn, .find-btn {
+.open-btn, .join-btn, .chat-btn {
   background-color: #572020;
   color: white;
   padding: 10px 16px;
@@ -288,6 +310,8 @@ textarea {
     flex-grow: 1;
   }
 
+  .main-content 
+
   .club-descript{
     display: none;
   }
@@ -317,7 +341,7 @@ textarea {
 
 .blurb{
   font-size: 20px;
-  padding-right: 280px;
+  padding-right: 100px;
 }
 
 .notification-card{
@@ -348,4 +372,26 @@ textarea {
 
 #map{
   width: 100%;
+}
+
+a{
+  text-decoration: none;
+}
+
+.schedule-container h4{
+  font-weight: 200;
+  padding-bottom: 4px;
+}
+
+.schedule-container p{
+  font-size: 12px;
+  padding: 2px 0px;
+}
+
+.schedule-container{
+  padding-bottom: 10px;
+}
+
+.zoom{
+  padding-bottom: 4px;
 }

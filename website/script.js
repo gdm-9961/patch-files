@@ -35,4 +35,3 @@ function joinClub(clubName) {
     alert('You are already in this book club!');
   }
 }
-
