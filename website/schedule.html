@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversations</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+
     <div class="sidebar">
         <a href="home.html"><i class="fa fa-home"></i><span> Home</span></a>
         <a href="my-clubs.html"><i class="fa fa-book"></i><span> My Book Clubs</span></a>
@@ -28,10 +29,36 @@
 
     <h2 class="page-heading">Schedule</h2>
 
-    <footer class="footer">
-        <a href="about.html">About</a>
-        <a href="faq.html">FAQ</a>
+  <div class="toggle-buttons">
+    <button onclick="showCalendar('personal')">My Meetings</button>
+    <button onclick="showCalendar('master')">All Meetings</button>
+  </div>
+
+  <!-- Personal Calendar -->
+  <table id="personal-calendar" class="calendar">
+    <tr><th>Date</th><th>Event</th></tr>
+    <tr><td>Friday, April 25th at 4:00pm EST</td><td><em>Pride & Prejudice</em>: Ch. 1–13 – Meet the Bennets, Mr. Bingley</td></tr>
+    <tr><td>Friday, May 9th at 4:00pm EST</td><td><em>Pride & Prejudice</em>: Ch. 14–24 – Mr. Collins arrives; early courtship tensions</td></tr>
+    <tr><td>Friday, May 23rd at 4:00pm EST</td><td><em>Pride & Prejudice</em>: Ch. 25–34 – Darcy’s first proposal & fallout</td></tr>
+    <tr><td>Friday, June 6th at 4:00pm EST</td><td><em>Pride & Prejudice</em>: Ch. 35–45 – Elizabeth’s travels & shifting perspectives</td></tr>
+    <tr><td>Friday, June 20th at 4:00pm EST</td><td><em>Pride & Prejudice</em>: Ch. 46–61 – Resolution, realizations, and romantic closure</td></tr>
+  </table>
+
+  <!-- Master Calendar -->
+  <table id="master-calendar" class="calendar hidden">
+    <tr><th>Date</th><th>Event</th></tr>
+    <tr><td>Friday, April 25th at 4:00pm EST</td><td><em>Pride & Prejudice</em>: Ch. 1–13 – Meet the Bennets, Mr. Bingley</td></tr>
+    <tr><td>Friday, May 9th at 4:00pm EST</td><td><em>Pride & Prejudice</em>: Ch. 14–24 – Mr. Collins arrives; early courtship tensions</td></tr>
+    <tr><td>Friday, May 23rd at 4:00pm EST</td><td><em>Pride & Prejudice</em>: Ch. 25–34 – Darcy’s first proposal & fallout</td></tr>
+    <tr><td>Friday, June 6th at 4:00pm EST</td><td><em>Pride & Prejudice</em>: Ch. 35–45 – Elizabeth’s travels & shifting perspectives</td></tr>
+    <tr><td>Friday, June 20th at 4:00pm EST</td><td><em>Pride & Prejudice</em>: Ch. 46–61 – Resolution, realizations, and romantic closure</td></tr>
+    <tr><td>Date</td><td><em>Book</em>: Topic</td></tr>
+  </table>
+
+  <footer class="footer">
+    <a href="about.html">About</a>
+    <a href="faq.html">FAQ</a>
     </footer>
-    
+    <script src="script.js"></script>
 </body>
 </html>

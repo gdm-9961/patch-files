@@ -193,7 +193,7 @@ header {
   justify-content: flex-end;
 }
 
-.open-btn, .join-btn, .chat-btn {
+button{
   background-color: #572020;
   color: white;
   padding: 10px 16px;
@@ -394,4 +394,41 @@ a{
 
 .zoom{
   padding-bottom: 4px;
+}
+
+.leave-btn{
+  position: absolute;
+  top: 120px;
+  right: 100px;
+  padding: 6px 10px;
+  background-color: #572020;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 200;
+}
+
+/*calendar*/
+
+.calendar {
+  max-width: 600px;
+  margin: auto;
+  margin-top: 30px;
+  border-collapse: collapse;
+}
+
+.calendar th, .calendar td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.hidden {
+  display: none;
+}
+
+.toggle-buttons {
+  text-align: center;
+  margin-bottom: 1rem;
 }

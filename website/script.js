@@ -35,3 +35,16 @@ function joinClub(clubName) {
     alert('You are already in this book club!');
   }
 }
+
+function showCalendar(view) {
+  const personal = document.getElementById('personal-calendar');
+  const master = document.getElementById('master-calendar');
+
+  if (view === 'personal') {
+    personal.classList.remove('hidden');
+    master.classList.add('hidden');
+  } else {
+    master.classList.remove('hidden');
+    personal.classList.add('hidden');
+  }
+}
