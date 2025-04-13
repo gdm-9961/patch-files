@@ -409,6 +409,10 @@ a{
   font-weight: 200;
 }
 
+.book-count, .author{
+  font-size: 400;
+}
+
 /*calendar*/
 
 .calendar {
