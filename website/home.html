@@ -104,5 +104,19 @@
     <a href="faq.html">FAQ</a>
   </footer>
   <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const joinedClubs = JSON.parse(localStorage.getItem("joinedClubs")) || [];
+  
+      joinedClubs.forEach(club => {
+        const button = document.querySelector(`button[onclick="joinClub('${club}')"]`);
+        if (button) {
+          button.textContent = "Joined!";
+          button.disabled = true;
+          button.classList.add("joined");
+        }
+      });
+    });
+  </script>
 </body>
 </html>

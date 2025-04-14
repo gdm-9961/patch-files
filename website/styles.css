@@ -321,6 +321,12 @@ textarea {
   cursor: pointer;
 }
 
+.join-btn.joined {
+  background-color: #ccc;
+  color: #333;
+  cursor: default;
+}
+
 .footer {
   padding: 40px;
   padding-left: 100px;
