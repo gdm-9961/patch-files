@@ -1,0 +1,57 @@
+<!-- INCLUDE overall_header.html -->
+
+<body class="ppages">
+    <div class="sidebar">
+        <a href="home.html"><i class="fa fa-home"></i><span> Home</span></a>
+        <a href="my-clubs.html"><i class="fa fa-book"></i><span> My Book Clubs</span></a>
+        <a href="schedule.html"><i class="fa fa-calendar"></i><span> Schedule</span></a>
+      </div>
+
+    <div class="main-content">
+    <header>
+        <div class="header-group">
+        <input type="text" placeholder="Search" class="search-bar" />
+        <div class="icons">
+            <a href="notifications.html" class="top-icon"><i class="fa fa-bell icon"></i></a>
+            <a href="profile.html" class="top-icon"><i class="fa fa-user-circle icon"></i></a>
+        </div>
+        </div>
+    </header>
+
+    <div class="profile-container">
+        <div class="profile-header">
+          <h2 class="page-heading">Profile</h2>
+          <button id="editBtn" class="edit-btn">
+            Edit <span class="edit-icon">✏️</span>
+          </button>
+        </div>
+        <div id="profileDetails" class="profile-details">
+          <div class="profile-row">
+            <strong>Name</strong>
+            <span id="nameDisplay">John Doe</span>
+            <input type="text" id="nameInput" value="John Doe" class="hidden" />
+          </div>
+          <div class="profile-row">
+            <strong>Email</strong>
+            <span id="emailDisplay">jad123@pitt.edu</span>
+            <input type="email" id="emailInput" value="jad123@pitt.edu" class="hidden" />
+          </div>
+          <div class="profile-row">
+            <strong>Address</strong>
+            <span id="addressDisplay">123 Fifth Ave.<br>Pittsburgh, PA 15213</span>
+            <textarea id="addressInput" class="hidden">123 Fifth Ave.&#10;Pittsburgh, PA 15213</textarea>
+          </div>
+          <div class="profile-row">
+            <strong>Member since</strong>
+            <span>Jan. 1, 2025</span>
+          </div>
+        </div>
+      </div>
+      <script src="script.js"></script>
+      </div>
+      <footer class="footer">
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+      </footer>
+</body>
+</html>
