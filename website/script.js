@@ -1,6 +1,13 @@
 const editBtn = document.getElementById("editBtn");
 let isEditing = false;
 
+if (editBtn) {
+  editBtn.addEventListener("click", () => {
+    isEditing = !isEditing;
+    toggleEditMode(isEditing);
+  });
+}
+
 editBtn.addEventListener("click", () => {
   isEditing = !isEditing;
   toggleEditMode(isEditing);
@@ -24,18 +31,6 @@ function toggleEditMode(editing) {
   editBtn.innerHTML = editing ? "Save <span class='edit-icon'>💾</span>" : "Edit <span class='edit-icon'>✏️</span>";
 }
 
-function joinClub(clubName) {
-  const userClubs = document.getElementById('user-clubs');
-  const existingClub = [...userClubs.children].some(li => li.textContent === clubName);
-  if (!existingClub) {
-    const li = document.createElement('li');
-    li.textContent = clubName;
-    userClubs.appendChild(li);
-  } else {
-    alert('You are already in this book club!');
-  }
-}
-
 function showCalendar(view) {
   const personal = document.getElementById('personal-calendar');
   const master = document.getElementById('master-calendar');
@@ -57,17 +52,6 @@ function getJoinedClubs() {
 // Helper: Save joined clubs to localStorage
 function saveJoinedClubs(clubs) {
   localStorage.setItem("joinedClubs", JSON.stringify(clubs));
-}
-
-// Join a club
-function joinClub(clubName) {
-  const joinedClubs = getJoinedClubs();
-  if (!joinedClubs.includes(clubName)) {
-    joinedClubs.push(clubName);
-    saveJoinedClubs(joinedClubs);
-    alert(`You've joined "${clubName}"!`);
-    window.location.href = "my-clubs.html"; // Redirect to My Book Clubs page
-  }
 }
 
 // Leave a club
@@ -107,7 +91,7 @@ function renderMyClubs() {
       <div class="club-card">
         <img src="assets/Jazz-in-the-Hill.jpeg" class="book-cover-medium" />
         <div class="club-info">
-          <h2 class="club-title">Pittsburgh Non-fiction</h2>
+          <h2 class="club-title">Steel City Stories</h2>
           <p><em>Jazz in the Hill</em> by Colter Harper</p>
           <p><em>Iron City</em> by Lloyd Brown</p>
           <span class="next-discush"><p>Next discussion: Friday, April 25th at 4:00pm EST</p></span>
@@ -170,8 +154,8 @@ function joinClub(clubName) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Set Join button text/state
   const joinedClubs = getJoinedClubs();
-
   joinedClubs.forEach(club => {
     const button = document.querySelector(`button[onclick="joinClub('${club}')"]`);
     if (button) {
@@ -180,4 +164,21 @@ document.addEventListener("DOMContentLoaded", () => {
       button.classList.add("joined");
     }
   });
+
+  // Accordion functionality
+  const accordions = document.getElementsByClassName("accordion");
+
+  for (let i = 0; i < accordions.length; i++) {
+    accordions[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+
+      const panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+      } else {
+        console.log(panel.scrollHeight);
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    });
+  }
 });

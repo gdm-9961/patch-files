@@ -5,7 +5,7 @@
   font-family: 'Inter', sans-serif;
 }
 
-.logo{
+.logo {
     width: 20%;
     padding-bottom: 40px;
 }
@@ -78,7 +78,7 @@ body {
   flex-grow: 1;
 }
 
-.sidebar:hover ~ .main-content{
+.sidebar:hover ~ .main-content {
   margin-left: 300px;
 }
 
@@ -154,7 +154,7 @@ header {
   flex-shrink: 0;
 }
 
-.book-cover-big{
+.book-cover-big {
   width: 220px;
   height: auto;
   border-radius: 8px;
@@ -167,14 +167,14 @@ header {
   flex-direction: column;
 }
 
-.club-descript{
+.club-descript {
   font-size: 13px;
   padding-top: 10px;
   padding-right: 100px;
   color: #444
 }
 
-.book-descript{
+.book-descript {
   font-size: 13px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -182,7 +182,7 @@ header {
   color: #444;
 }
 
-.next-discush{
+.next-discush {
   color: #888888;
   margin-top: 6px;
 }
@@ -193,7 +193,7 @@ header {
   justify-content: flex-end;
 }
 
-button{
+button {
   background-color: #572020;
   color: white;
   padding: 10px 16px;
@@ -312,7 +312,7 @@ textarea {
 
   .main-content 
 
-  .club-descript{
+  .club-descript {
     display: none;
   }
 }
@@ -345,23 +345,24 @@ textarea {
   text-decoration: underline;
 }
 
-.blurb{
+.blurb {
   font-size: 20px;
   padding-right: 100px;
 }
 
-.notification-card{
+.notification-card {
   background-color: #ffffff;
   border-radius: 16px;
   padding: 20px 20px;
   margin: 10px;
 }
 
-.tags{
+.tags {
   margin-top: 10px;
+  margin-right: 4px;
 }
 
-.tags span{
+.tags span {
   background-color: #e6e6e6;
   color: #555555;
   padding: 4px 12px;
@@ -370,39 +371,35 @@ textarea {
   margin-top: 20px 0px;
 }
 
-.book-number{
+.book-number {
   margin-bottom: 16px;
   font-weight: 600;
   color: #555555;
 }
 
-#map{
+#map {
   width: 100%;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
-.schedule-container h4{
+.schedule-container h4 {
   font-weight: 200;
   padding-bottom: 4px;
 }
 
-.schedule-container p{
+.schedule-container p {
   font-size: 12px;
   padding: 2px 0px;
 }
 
-.schedule-container{
+.schedule-container {
   padding-bottom: 10px;
 }
 
-.zoom{
-  padding-bottom: 4px;
-}
-
-.leave-btn{
+.leave-btn {
   position: absolute;
   top: 120px;
   right: 100px;
@@ -415,7 +412,7 @@ a{
   font-weight: 200;
 }
 
-.book-count, .author{
+.book-count, .author {
   font-size: 400;
 }
 
@@ -441,4 +438,38 @@ a{
 .toggle-buttons {
   text-align: center;
   margin-bottom: 1rem;
+}
+
+/*FAQ accordian*/
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+
+.accordion:hover,
+.accordion.active {
+  background-color: #ccc;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  border-left: 2px solid #ddd;
+  border-right: 2px solid #ddd;
+  border-bottom: 2px solid #ddd;
+  border-radius: 0 0 4px 4px;
 }
