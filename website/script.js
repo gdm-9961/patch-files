@@ -163,22 +163,23 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-  // Accordion functionality
-  const accordions = document.getElementsByClassName("accordion");
+// Accordion functionality
+const accordions = document.getElementsByClassName("accordion");
 
-  for (let i = 0; i < accordions.length; i++) {
-    accordions[i].addEventListener("click", function () {
-      this.classList.toggle("active");
+for (let i = 0; i < accordions.length; i++) {
+  accordions[i].addEventListener("click", function () {
+    this.classList.toggle("active");
 
-      const panel = this.nextElementSibling;
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;
-      } else {
-        console.log(panel.scrollHeight);
-        panel.style.maxHeight = panel.scrollHeight + "px";
-      }
-    });
-  }
+    const panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+      panel.classList.remove("open");
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+      panel.classList.add("open");
+    }
+  });
+}
 
 document.getElementById("searchBar").addEventListener("input", function () {
   const query = this.value.toLowerCase();

@@ -454,7 +454,7 @@ a {
   font-size: 15px;
   transition: background-color 0.3s ease;
   border-radius: 4px;
-  margin-bottom: 5px;
+  border-radius: 4px 4px 0 0;
 }
 
 .accordion:hover,
@@ -463,13 +463,26 @@ a {
 }
 
 .panel {
-  padding: 18px;
+  padding: 0px 18px;
   background-color: white;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-out;
   border-radius: 0 0 4px 4px;
+  margin-bottom: 10px;
 }
+
+.panel p {
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.panel.open {
+  padding: 18px;
+}
+
+/*End FAQ accordian*/
+
 
 .highlight {
   background-color: yellow;
