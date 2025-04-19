@@ -8,11 +8,6 @@ if (editBtn) {
   });
 }
 
-editBtn.addEventListener("click", () => {
-  isEditing = !isEditing;
-  toggleEditMode(isEditing);
-});
-
 function toggleEditMode(editing) {
   const inputs = ["name", "email", "address"];
   inputs.forEach((field) => {
@@ -28,7 +23,9 @@ function toggleEditMode(editing) {
     }
   });
 
-  editBtn.innerHTML = editing ? "Save <span class='edit-icon'>💾</span>" : "Edit <span class='edit-icon'>✏️</span>";
+  editBtn.innerHTML = editing
+  ? "Save <i class='fa fa-floppy-o edit-icon' style='color: #444;'></i>"
+  : "Edit <i class='fa fa-pencil edit-icon' style='color: #444;'></i>";
 }
 
 function showCalendar(view) {
