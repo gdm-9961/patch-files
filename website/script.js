@@ -87,7 +87,7 @@ function renderMyClubs() {
         </div>
       </div>`,
 
-    "Pittsburgh Non-fiction": `
+    "Steel City Stories": `
       <div class="club-card">
         <img src="assets/Jazz-in-the-Hill.jpeg" class="book-cover-medium" />
         <div class="club-info">
@@ -180,5 +180,59 @@ document.addEventListener("DOMContentLoaded", () => {
         panel.style.maxHeight = panel.scrollHeight + "px";
       }
     });
+  }
+});
+
+document.getElementById("searchBar").addEventListener("input", function () {
+  const query = this.value.toLowerCase();
+  const textNodes = [];
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+
+  // Remove old highlights
+  document.querySelectorAll(".highlight").forEach(el => {
+    const parent = el.parentNode;
+    parent.replaceChild(document.createTextNode(el.textContent), el);
+    parent.normalize(); // merges adjacent text nodes
+  });
+
+  // Collect all visible text nodes
+  while (walker.nextNode()) {
+    const node = walker.currentNode;
+    if (node.parentNode && node.nodeValue.trim().length > 0 &&
+        !["SCRIPT", "STYLE", "TEXTAREA"].includes(node.parentNode.tagName)) {
+      textNodes.push(node);
+    }
+  }
+
+  let firstMatch = null;
+
+  textNodes.forEach(node => {
+    const text = node.nodeValue;
+    const index = text.toLowerCase().indexOf(query);
+    if (index > -1 && query !== "") {
+      const span = document.createElement("span");
+      span.className = "highlight";
+      span.textContent = text.substring(index, index + query.length);
+
+      const after = document.createTextNode(text.substring(index + query.length));
+      const before = document.createTextNode(text.substring(0, index));
+
+      const fragment = document.createDocumentFragment();
+      fragment.appendChild(before);
+      fragment.appendChild(span);
+      fragment.appendChild(after);
+
+      const parent = node.parentNode;
+      parent.replaceChild(fragment, node);
+
+      if (!firstMatch) {
+        firstMatch = span;
+      }
+    }
+  });
+
+  // Scroll to first match
+  if (firstMatch) {
+    firstMatch.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 });

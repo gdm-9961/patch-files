@@ -473,3 +473,8 @@ a {
   border-bottom: 2px solid #ddd;
   border-radius: 0 0 4px 4px;
 }
+
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
