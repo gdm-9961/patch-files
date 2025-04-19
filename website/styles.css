@@ -463,14 +463,11 @@ a {
 }
 
 .panel {
-  padding: 0 18px;
+  padding: 18px;
   background-color: white;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-out;
-  border-left: 2px solid #ddd;
-  border-right: 2px solid #ddd;
-  border-bottom: 2px solid #ddd;
   border-radius: 0 0 4px 4px;
 }
 

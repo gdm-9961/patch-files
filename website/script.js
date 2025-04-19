@@ -161,6 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
       button.classList.add("joined");
     }
   });
+});
 
   // Accordion functionality
   const accordions = document.getElementsByClassName("accordion");
@@ -178,7 +179,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-});
 
 document.getElementById("searchBar").addEventListener("input", function () {
   const query = this.value.toLowerCase();
