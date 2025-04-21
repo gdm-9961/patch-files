@@ -101,8 +101,8 @@ function leaveClub(clubName) {
   const joinedClubs = getJoinedClubs();
   const updatedClubs = joinedClubs.filter(club => club !== clubName);
   saveJoinedClubs(updatedClubs);
-  alert(`You've left "${clubName}".`);
-  window.location.href = "my-clubs.html";
+  //alert(`You've left "${clubName}".`);
+  //window.location.href = "my-clubs.html";
 }
 
 // On My Clubs page: render joined clubs
@@ -181,20 +181,29 @@ function joinClub(clubId) {
   if (!joinedClubs.includes(clubName)) {
     joinedClubs.push(clubName);
     saveJoinedClubs(joinedClubs);
+  }
 
+    let watchstring;
     // Find the button and update its state
     const button = document.querySelector(`button[onclick="joinClub('${clubId}')"]`);
     if (button) {
-      button.textContent = "Joined!";
-      button.disabled = true;
-      button.classList.add("joined"); // Optional: for styling
+      if (button.textContent == "Joined!"){
+         watchstring = "unwatch";
+         button.textContent = "Join";
+         button.classList.remove("joined");
+         leaveClub(clubName);
+      }
+      else {
+        watchstring = "watch";
+        button.textContent = "Joined!";
+        button.classList.add("joined"); // Optional: for styling 
+      }
     }
 
     // Optional redirect after short delay
     setTimeout(() => {
-      window.location.href = `http://127.0.0.1:8000/viewforum.php?uid=2&f=${clubId}&${button.classList.contains("joined") ? 'un' : ''}watch=forum`;
+      window.location.href = `http://127.0.0.1:8000/viewforum.php?uid=2&f=${clubId}&${watchstring}=forum`;
     }, 800); // short pause before redirecting
-  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -204,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const button = document.querySelector(`button[onclick="joinClub('${clubHash.indexOf(club)+4}')"]`);
     if (button) {
       button.textContent = "Joined!";
-      button.disabled = true;
+      //button.disabled = true;
       button.classList.add("joined");
     }
   });
