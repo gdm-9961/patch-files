@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Club</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="sidebar">
+        <a href="home.html"><i class="fa fa-home"></i><span> Home</span></a>
+        <a href="my-clubs.html"><i class="fa fa-book"></i><span> My Book Clubs</span></a>
+        <a href="schedule.html"><i class="fa fa-calendar"></i><span> Schedule</span></a>
+      </div>
+
+    <div class="main-content">
+    <header>
+        <div class="header-group">
+        <input type="text" placeholder="Search" class="search-bar" />
+        <div class="icons">
+            <a href="notifications.html" class="top-icon"><i class="fa fa-bell icon"></i></a>
+            <a href="profile.html" class="top-icon"><i class="fa fa-user-circle icon"></i></a>
+        </div>
+        </div>
+    </header>
+
+    <button class="leave-btn" onclick="leaveClub('Steel City Stories')">Leave Club</button>
+    <h2 class="page-heading">Steel City Stories</h2>
+    <h3 class="book-number">Book 1</h3>
+    <div class="club-card">
+        <img src="assets/Jazz-in-the-Hill.jpeg" alt="Jazz in the Hill Book Cover" class="book-cover-big" />
+        <div class="club-info">
+          <h2 class="club-title">Jazz in the Hill: Nightlife and Narratives of A Pittsburgh Neighborhood by Harper</h2>
+          <p class="author">by Colter Harper</p>
+          <p class="book-descript">This read is a richly detailed exploration of Pittsburgh's Hill District, once a vibrant center of Black 
+            cultural life and a thriving jazz scene from the 1920s through the 1960s. Harper delves into how jazz clubs in this neighborhood 
+            were more than entertainment venues—they were pivotal in fostering a self-determined African American community. The book examines 
+            the intricate networks of patrons, musicians, and business owners who contributed to community building, set against the backdrop
+             of significant historical contexts such as Prohibition, urban redevelopment, and the civil rights movement. Through this lens, 
+             Harper illustrates how the Hill District's musical legacy continues to influence its identity and development today.</p>
+              <div class="schedule-container">
+                <h4>Zoom Schedule</h4>
+                <p>Intro–Ch. 2 – Origins, memories, and the sounds of the Hill: Friday, July 11th at 7:00pm EST</p>
+                <p>Ch. 3–4 – Clubs, culture, and oral histories: Friday, July 25th at 7:00pm EST</p>
+                <p>Ch. 5–6 – Shifting streets and sonic storytelling: Friday, August 8th at 7:00pm EST</p>
+                <p>Ch. 7–End – Reflections, photography, and preserving legacy: Friday, August 22nd at 7:00pm EST</p>
+            </div>
+            <a href="https://us05web.zoom.us/j/82410039981?pwd=u7s1OxmlifpCZ14dXk0vBrpzWX55ob.1">Zoom Meeting Link</a>
+            <a href="map.html">Find Physical Copy</a>
+          <div class="button-wrapper">
+            <button class="chat-btn">Open Discussion</button>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="book-number">Book 2</h3>
+      <div class="club-card">
+        <img src="assets/Iron-City.jpeg" alt="Iron City Book Cover" class="book-cover-big" />
+        <div class="club-info">
+          <h2 class="club-title">Iron City</h2>
+          <p class="author">by LLoyd Brown</p>
+          <p class="book-descript">This powerful novel by Lloyd L. Brown is set in Pittsburgh's Allegheny County Jail, drawing from the author's
+             own experiences as a labor organizer and political prisoner. The story centers on Lonnie James, a young Black man falsely accused of
+              murder, and the collective efforts of three fellow Black Communist inmates who rally to prove his innocence. Through this narrative,
+               the novel delves into themes of systemic racism, class struggle, and the pursuit of justice, offering a vivid portrayal of
+                mid-20th-century America's social and political landscape.​
+          </p>
+          <div class="schedule-container">
+            <h4>Zoom Schedule</h4>
+            <p>Ch. 1–4 – Imprisonment, injustice, and growing unrest: Friday, July 11th at 7:00pm EST</p>
+            <p>Ch. 5–8 – Solidarity, struggle, and political awakening: Friday, July 25th at 7:00pm EST</p>
+            <p>Ch. 9–12 – Resistance, race, and class conflicts: Friday, August 8th at 7:00pm EST</p>
+            <p>Ch. 13–End – Trial, truth, and transformation: Friday, August 22nd at 7:00pm EST</p>
+        </div>
+        <a href="https://us05web.zoom.us/j/82410039981?pwd=u7s1OxmlifpCZ14dXk0vBrpzWX55ob.1">Zoom Meeting Link</a>
+            <a href="map.html">Find Physical Copy</a>
+          <div class="button-wrapper">
+            <button class="chat-btn">Open Discussion</button>
+          </div>
+        </div>
+      </div>
+
+      <h3>Meeting Transcripts</h3>
+    </div>
+    <footer class="footer">
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

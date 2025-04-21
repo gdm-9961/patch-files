@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Penguin Pages</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="sidebar">
+        <a href="#home"><i class="fa fa-home"></i><span>Home</span></a>
+        <a href="my-clubs.html"><i class="fa fa-book"></i><span>My Book Clubs</span></a>
+        <a href="schedule.html"><i class="fa fa-calendar"></i><span> Schedule</span></a>
+      </div>
+
+    <div class="main-content">
+    <header>
+        <div class="header-group">
+        <input type="text" id="searchBar" class="search-bar" />
+        <div class="icons">
+          <a href="notifications.html" class="top-icon"><i class="fa fa-bell icon"></i></a>
+          <a href="profile.html" class="top-icon"><i class="fa fa-user-circle icon"></i></a>
+        </div>
+        </div>
+    </header>
+    <img src="assets/Penguin-Pages-logo.png" alt="Penguin Pages Logo" class="logo" />
+
+    <div class="book-clubs">
+
+      <div class="club-card">
+        <img src="assets/PrideandPrejudiceandZombies.jpeg" alt="Pride and Prejudice and Zombies Book Cover" class="book-cover" />
+        <div class="club-info">
+          <h2 class="club-title">Classics with a Twist</h2>
+          <p class="book-count">2 books</p>
+          <p class="club-descript">This book club is for readers who enjoy well-known classics and their parodic counterparts. Our first pairing of this book club will be Jane Austen's, Pride and Prejudice,
+            and Seth Grahame-Smith's Pride and Prejudice and Zombies, a novel that subverts the classic 'enemies to lovers' trope into a love triangle interrupted by the living dead.
+          </p>
+          <span class="next-discush">
+            <p>Next discussion: Friday, April 25th at 4:00pm EST</p>
+          </span>
+          <div class="tags">
+            <span>Zoom Meetings</span>
+            <span>Chapter by Chapter Discussions</span>
+            <span>Forum Threads</span>
+          </div>
+          <div class="button-wrapper">
+            <button class="join-btn" onclick="joinClub('Classics with a Twist')">Join</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="club-card">
+        <img src="assets/Jazz-in-the-Hill.jpeg" alt="Jazz in the Hill Book Cover" class="book-cover"/>
+        <div class="club-info">
+          <h2 class="club-title">Steel City Stories</h2>
+          <p class="book-count">2 books</p>
+          <p class="club-descript">This book club explores books about the city of Pittsburgh and its rich culture and history, for yinzers by the yinzers. Our first novel of this book club will be Colter Harper's,
+            Jazz in the Hill: Nightlife and Narratives of A Pittsburgh Neighborhood. This book is for the readers interested in the lesser-known stories of Pittsburgh's past, with an emphasis
+            on authors who originate or have a personal connection to the city.</p>
+            <span class="next-discush">
+              <p>Next discussion: Friday, April 25th at 4:00pm EST</p>
+            </span>
+            <div class="tags">
+              <span>Zoom Meetings</span>
+              <span>Chapter by Chapter Discussions</span>
+              <span>Forum Threads</span>
+            </div>
+          <div class="button-wrapper">
+            <button class="join-btn" onclick="joinClub('Steel City Stories')">Join</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="club-card">
+        <img src="assets/Ubik.jpeg" alt="Ubik Book Cover" class="book-cover"/>
+        <div class="club-info">
+          <h2 class="club-title">SciFi</h2>
+          <p class="book-count">2 books</p>
+          <p class="club-descript">This book club reads science fiction novels personally selected by University of Pittsburgh English professors. These selections range from the early 20th century to as recent as 
+            2019 with themes that can eerily mirror our reality, such as Karen Thompson Walker's, The Dreamers, a novel released in 2019 about an ominous sleeping virus and its effects on a 
+            California town's inhabitants.</p>
+            <span class="next-discush">
+              <p>Next discussion: Friday, May 2nd at 1:00pm EST</p>
+            </span>
+            <div class="tags">
+              <span>Zoom Meetings</span>
+              <span>Chapter by Chapter Discussions</span>
+              <span>Forum Threads</span>
+            </div>
+          <div class="button-wrapper">
+            <button class="join-btn" onclick="joinClub('SciFi')">Join</button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+  </div>
+  <footer class="footer">
+    <a href="about.html">About</a>
+    <a href="faq.html">FAQ</a>
+  </footer>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const joinedClubs = JSON.parse(localStorage.getItem("joinedClubs")) || [];
+  
+      joinedClubs.forEach(club => {
+        const button = document.querySelector(`button[onclick="joinClub('${club}')"]`);
+        if (button) {
+          button.textContent = "Joined!";
+          button.disabled = true;
+          button.classList.add("joined");
+        }
+      });
+    });
+  </script>
+</body>
+</html>

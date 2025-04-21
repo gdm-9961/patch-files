@@ -43,6 +43,8 @@ RewriteRule ^(.*)$ app.php [QSA,L]
 	Options -MultiViews
 </IfModule>
 
+DirectoryIndex home.html index.html index.php  index.htm 
+
 # With Apache 2.4 the "Order, Deny" syntax has been deprecated and moved from
 # module mod_authz_host to a new module called mod_access_compat (which may be
 # disabled) and a new "Require" syntax has been introduced to mod_authz_host.
