@@ -1,5 +1,6 @@
 const editBtn = document.getElementById("editBtn");
 let isEditing = false;
+const clubHash = ['Classics with a Twist','Steel City Stories','SciFi'];
 
 if (editBtn) {
   editBtn.addEventListener("click", () => {
@@ -172,7 +173,9 @@ function renderMyClubs() {
   });
 }
 
-function joinClub(clubName) {
+function joinClub(clubId) {
+  let clubName = clubHash[parseInt(clubId)-4];
+
   const joinedClubs = getJoinedClubs();
 
   if (!joinedClubs.includes(clubName)) {
@@ -180,7 +183,7 @@ function joinClub(clubName) {
     saveJoinedClubs(joinedClubs);
 
     // Find the button and update its state
-    const button = document.querySelector(`button[onclick="joinClub('${clubName}')"]`);
+    const button = document.querySelector(`button[onclick="joinClub('${clubId}')"]`);
     if (button) {
       button.textContent = "Joined!";
       button.disabled = true;
@@ -189,7 +192,7 @@ function joinClub(clubName) {
 
     // Optional redirect after short delay
     setTimeout(() => {
-      window.location.href = "http://127.0.0.1:8000/viewforum.php?uid=2&f=4&watch=forum";
+      window.location.href = `http://127.0.0.1:8000/viewforum.php?uid=2&f=${clubId}&${button.classList.contains("joined") ? 'un' : ''}watch=forum`;
     }, 800); // short pause before redirecting
   }
 }
@@ -198,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Set Join button text/state
   const joinedClubs = getJoinedClubs();
   joinedClubs.forEach(club => {
-    const button = document.querySelector(`button[onclick="joinClub('${club}')"]`);
+    const button = document.querySelector(`button[onclick="joinClub('${clubHash.indexOf(club)+4}')"]`);
     if (button) {
       button.textContent = "Joined!";
       button.disabled = true;
