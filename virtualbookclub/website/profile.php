@@ -29,7 +29,7 @@
     <div class="main-content">
         <header>
             <div class="header-group">
-                <input type="text" placeholder="Search" class="search-bar" />
+                <input type="text" placeholder="Search" id="searchBar" class="search-bar" />
                 <div class="icons">
                     <a href="notifications.html" class="top-icon"><i class="fa fa-bell icon"></i></a>
                     <a href="profile.html" class="top-icon"><i class="fa fa-user-circle icon"></i></a>
