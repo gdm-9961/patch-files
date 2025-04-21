@@ -48,8 +48,8 @@
                     </a>
                 <?php } else { ?>
                     <!-- If not logged in, show login and register buttons -->
-                    <button onclick="location.href='<?php echo $phpbb_root_path; ?>ucp.php?mode=login'" class="button" target="blank" >Login</button>
-                    <button onclick="location.href='<?php echo $phpbb_root_path; ?>ucp.php?mode=register'" class="button" target="blank" >Register</button>
+                    <button onclick="location.href='<?php echo $phpbb_root_path; ?>ucp.php?mode=login'" class="button" target="_blank" >Login</button>
+                    <button onclick="location.href='<?php echo $phpbb_root_path; ?>ucp.php?mode=register'" class="button" target="_blank" >Register</button>
                 <?php } ?>
             </div>
 
