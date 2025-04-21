@@ -189,7 +189,7 @@ function joinClub(clubName) {
 
     // Optional redirect after short delay
     setTimeout(() => {
-      window.location.href = "my-clubs.html";
+      window.location.href = "http://127.0.0.1:8000/viewforum.php?uid=2&f=4&watch=forum";
     }, 800); // short pause before redirecting
   }
 }
