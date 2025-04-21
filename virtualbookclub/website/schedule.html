@@ -11,13 +11,13 @@
 </head>
 <body>
 
-    <div class="sidebar">
-        <a href="home.html"><i class="fa fa-home"></i><span> Home</span></a>
-        <a href="my-clubs.html"><i class="fa fa-book"></i><span> My Book Clubs</span></a>
-        <a href="schedule.html"><i class="fa fa-calendar"></i><span> Schedule</span></a>
-      </div>
+  <div class="sidebar">
+      <a href="home.html"><i class="fa fa-home"></i><span> Home</span></a>
+      <a href="my-clubs.html"><i class="fa fa-book"></i><span> My Book Clubs</span></a>
+      <a href="schedule.html"><i class="fa fa-calendar"></i><span> Schedule</span></a>
+    </div>
 
-    <div class="main-content">
+  <div class="main-content">
     <header>
         <div class="header-group">
           <input type="text" placeholder="Search" id="searchBar" class="search-bar" />
@@ -30,31 +30,58 @@
 
     <h2 class="page-heading">Schedule</h2>
 
-  <div class="toggle-buttons">
-    <button onclick="showCalendar('personal')">My Meetings</button>
-    <button onclick="showCalendar('master')">All Meetings</button>
-  </div>
+    <div class="toggle-buttons">
+      <button onclick="showCalendar('personal')">My Meetings</button>
+      <button onclick="showCalendar('master')">All Meetings</button>
+    </div>
 
-  <!-- Personal Calendar -->
-  <table id="personal-calendar" class="calendar">
-    <tr><th>Date</th><th>Event</th></tr>
-    <tr><td>Friday, April 25th at 4:00pm EST</td><td><em>Pride & Prejudice</em>: Ch. 1–13 – Meet the Bennets, Mr. Bingley</td></tr>
-    <tr><td>Friday, May 9th at 4:00pm EST</td><td><em>Pride & Prejudice</em>: Ch. 14–24 – Mr. Collins arrives; early courtship tensions</td></tr>
-    <tr><td>Friday, May 23rd at 4:00pm EST</td><td><em>Pride & Prejudice</em>: Ch. 25–34 – Darcy’s first proposal & fallout</td></tr>
-    <tr><td>Friday, June 6th at 4:00pm EST</td><td><em>Pride & Prejudice</em>: Ch. 35–45 – Elizabeth’s travels & shifting perspectives</td></tr>
-    <tr><td>Friday, June 20th at 4:00pm EST</td><td><em>Pride & Prejudice</em>: Ch. 46–61 – Resolution, realizations, and romantic closure</td></tr>
-  </table>
+    <!-- Personal Calendar -->
+    <table id="personal-calendar" class="calendar hidden">
+      <tr><th>Date</th><th>Event</th></tr>
+    </table>
 
-  <!-- Master Calendar -->
-  <table id="master-calendar" class="calendar hidden">
-    <tr><th>Date</th><th>Event</th></tr>
-    <tr><td>Friday, April 25th at 4:00pm EST</td><td><em>Pride & Prejudice</em>: Ch. 1–13 – Meet the Bennets, Mr. Bingley</td></tr>
-    <tr><td>Friday, May 9th at 4:00pm EST</td><td><em>Pride & Prejudice</em>: Ch. 14–24 – Mr. Collins arrives; early courtship tensions</td></tr>
-    <tr><td>Friday, May 23rd at 4:00pm EST</td><td><em>Pride & Prejudice</em>: Ch. 25–34 – Darcy’s first proposal & fallout</td></tr>
-    <tr><td>Friday, June 6th at 4:00pm EST</td><td><em>Pride & Prejudice</em>: Ch. 35–45 – Elizabeth’s travels & shifting perspectives</td></tr>
-    <tr><td>Friday, June 20th at 4:00pm EST</td><td><em>Pride & Prejudice</em>: Ch. 46–61 – Resolution, realizations, and romantic closure</td></tr>
-    <tr><td>Date</td><td><em>Book</em>: Topic</td></tr>
-  </table>
+    <!-- Master Calendar -->
+    <table id="master-calendar" class="calendar">
+      <tr><th>Date</th><th>Event</th></tr>
+      <tr><td>Friday, April 25th at 4:00pm EST</td><td><em>Pride & Prejudice</em>: Ch. 1–13 – Meet the Bennets, Mr. Bingley</td></tr>
+      <tr><td>Saturday, April 26th at 7:00pm EST</td><td><em>Jazz in the Hill</em>: Intro–Ch. 2 – Origins, memories, and the sounds of the Hill</td></tr>
+      <tr><td>Sunday, April 27th at 7:00pm EST</td><td><em>Ubik</em>: Ch. 1–4 – Psy powers, strange deaths, and a corporate mission</td></tr>
+
+      <tr><td>Friday, May 9th at 4:00pm EST</td><td><em>Pride & Prejudice</em>: Ch. 14–24 – Mr. Collins arrives; early courtship tensions</td></tr>
+      <tr><td>Saturday, May 10th at 7:00pm EST</td><td><em>Jazz in the Hill</em>: Ch. 3–4 – Clubs, culture, and oral histories</td></tr>
+      <tr><td>Sunday, May 11th at 7:00pm EST</td><td><em>Ubik</em>: Ch. 5–8 – Shifting realities and unsettling visions</td></tr>
+
+      <tr><td>Friday, May 23rd at 4:00pm EST</td><td><em>Pride & Prejudice</em>: Ch. 25–34 – Darcy’s first proposal & fallout</td></tr>
+      <tr><td>Saturday, May 24th at 7:00pm EST</td><td><em>Jazz in the Hill</em>: Ch. 5–6 – Shifting streets and sonic storytelling</td></tr>
+      <tr><td>Sunday, May 25th at 7:00pm EST</td><td><em>Ubik</em>: Ch. 9–12 – Decay, time loops, and fading boundaries</td></tr>
+
+      <tr><td>Friday, June 6th at 4:00pm EST</td><td><em>Pride & Prejudice</em>: Ch. 35–45 – Elizabeth’s travels & shifting perspectives</td></tr>
+      <tr><td>Saturday, June 6th at 7:00pm EST</td><td><em>Jazz in the Hill</em>: Ch. 7–End – Reflections, photography, and preserving legacy</td></tr>
+
+      <tr><td>Friday, June 20th at 4:00pm EST</td><td><em>Pride & Prejudice</em>: Ch. 46–61 – Resolution, realizations, and romantic closure</td></tr>
+      <tr><td>Sunday, June 18th at 7:00pm EST</td><td><em>Ubik</em>: Ch. 13–15 – Ubik appears and reality breaks</td></tr>
+      <tr><td>Sunday, June 22nd at 7:00pm EST</td><td><em>Ubik</em>: Ch. 16–End – Revelations and philosophical spirals</td></tr>
+
+      <tr><td>Friday, July 11th at 4:00pm EST</td><td><em>Pride & Prejudice and Zombies</em>: Ch. 1–12 – Introductions, tensions, and first undead attacks</td></tr>
+      <tr><td>Saturday, June 28th at 7:00pm EST</td><td><em>Iron City</em>: Ch. 1–4 – Imprisonment, injustice, and growing unrest</td></tr>
+
+      <tr><td>Friday, July 25th at 4:00pm EST</td><td><em>Pride & Prejudice and Zombies</em>: Ch. 13–24 – Courting chaos and combat training</td></tr>
+      <tr><td>Saturday, July 12th at 7:00pm EST</td><td><em>Iron City</em>: Ch. 5–8 – Solidarity, struggle, and political awakening</td></tr>
+      <tr><td>Sunday, July 13th at 7:00pm EST</td><td><em>The Dreamers</em>: Ch. 1–6 – A small town, a sleeping sickness, and quiet dread</td></tr>
+
+      <tr><td>Saturday, July 26th at 7:00pm EST</td><td><em>Iron City</em>: Ch. 9–12 – Resistance, race, and class conflicts</td></tr>
+      <tr><td>Sunday, July 27th at 7:00pm EST</td><td><em>The Dreamers</em>: Ch. 7–13 – Quarantine, uncertainty, and eerie calm</td></tr>
+
+      <tr><td>Friday, August 8th at 4:00pm EST</td><td><em>Pride & Prejudice and Zombies</em>: Ch. 25–35 – Proposals, pride, and plague</td></tr>
+      <tr><td>Saturday, August 9th at 7:00pm EST</td><td><em>Iron City</em>: Ch. 13–End – Trial, truth, and transformation</td></tr>
+      <tr><td>Sunday, August 10th at 7:00pm EST</td><td><em>The Dreamers</em>: Ch. 14–20 – Dreams, fears, and growing disconnection</td></tr>
+
+      <tr><td>Friday, August 22nd at 4:00pm EST</td><td><em>Pride & Prejudice and Zombies</em>: Ch. 36–49 – Travel, revelations, and rising danger</td></tr>
+      <tr><td>Sunday, August 24th at 7:00pm EST</td><td><em>The Dreamers</em>: Ch. 21–27 – Scientific insight and emotional fractures</td></tr>
+
+      <tr><td>Friday, September 5th at 4:00pm EST</td><td><em>Pride & Prejudice and Zombies</em>: Ch. 50–61 – Final battles and unexpected pairings</td></tr>
+      <tr><td>Sunday, September 7th at 7:00pm EST</td><td><em>The Dreamers</em>: Ch. 28–End – Resolutions, memories, and what we wake up to</td></tr>
+    </table>
 
   </div>
 

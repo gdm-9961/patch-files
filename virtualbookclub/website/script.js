@@ -28,18 +28,62 @@ function toggleEditMode(editing) {
   : "Edit <i class='fa fa-pencil edit-icon' style='color: #444;'></i>";
 }
 
-function showCalendar(view) {
-  const personal = document.getElementById('personal-calendar');
-  const master = document.getElementById('master-calendar');
+document.addEventListener("DOMContentLoaded", () => {
+  const joinedClubs = JSON.parse(localStorage.getItem("joinedClubs")) || [];
 
-  if (view === 'personal') {
-    personal.classList.remove('hidden');
-    master.classList.add('hidden');
-  } else {
-    master.classList.remove('hidden');
-    personal.classList.add('hidden');
-  }
-}
+  // Function to toggle calendar view
+  window.showCalendar = (type) => {
+    const personalTable = document.getElementById("personal-calendar");
+    const masterTable = document.getElementById("master-calendar");
+
+    if (type === "personal") {
+      personalTable.classList.remove("hidden");
+      masterTable.classList.add("hidden");
+    } else {
+      personalTable.classList.add("hidden");
+      masterTable.classList.remove("hidden");
+    }
+  };
+
+  // Generate personal calendar rows dynamically
+  const allMeetings = [
+    { date: "Friday, April 25th at 4:00pm EST", club: "Classics with a Twist", book: "Pride & Prejudice", topic: "Ch. 1–13 – Meet the Bennets, Mr. Bingley" },
+    { date: "Friday, May 9th at 4:00pm EST", club: "Classics with a Twist", book: "Pride & Prejudice", topic: "Ch. 14–24 – Mr. Collins arrives; early courtship tensions" },
+    { date: "Friday, May 23rd at 4:00pm EST", club: "Classics with a Twist", book: "Pride & Prejudice", topic: "Ch. 25–34 – Darcy’s first proposal & fallout" },
+    { date: "Friday, June 6th at 4:00pm EST", club: "Classics with a Twist", book: "Pride & Prejudice", topic: "Ch. 35–45 – Elizabeth’s travels & shifting perspectives" },
+    { date: "Friday, June 20th at 4:00pm EST", club: "Classics with a Twist", book: "Pride & Prejudice", topic: "Ch. 46–61 – Resolution, realizations, and romantic closure" },
+
+    { date: "Saturday, April 26th at 7:00pm EST", club: "Steel City Stories", book: "Jazz in the Hill", topic: "Intro–Ch. 2 – Origins, memories, and the sounds of the Hill" },
+    { date: "Saturday, May 10th at 7:00pm EST", club: "Steel City Stories", book: "Jazz in the Hill", topic: "Ch. 3–4 – Clubs, culture, and oral histories" },
+    { date: "Saturday, May 24th at 7:00pm EST", club: "Steel City Stories", book: "Jazz in the Hill", topic: "Ch. 5–6 – Shifting streets and sonic storytelling" },
+    { date: "Saturday, June 6th at 7:00pm EST", club: "Steel City Stories", book: "Jazz in the Hill", topic: "Ch. 7–End – Reflections, photography, and preserving legacy" },
+
+    { date: "Sunday, April 27th at 7:00pm EST", club: "SciFi", book: "Ubik", topic: "Ch. 1–4 – Psy powers, strange deaths, and a corporate mission" },
+    { date: "Sunday, May 11th at 7:00pm EST", club: "SciFi", book: "Ubik", topic: "Ch. 5–8 – Shifting realities and unsettling visions" },
+    { date: "Sunday, May 25th at 7:00pm EST", club: "SciFi", book: "Ubik", topic: "Ch. 9–12 – Decay, time loops, and fading boundaries" },
+    { date: "Sunday, June 18th at 7:00pm EST", club: "SciFi", book: "Ubik", topic: "Ch. 13–15 – Ubik appears and reality breaks" },
+    { date: "Sunday, June 22nd at 7:00pm EST", club: "SciFi", book: "Ubik", topic: "Ch. 16–End – Revelations and philosophical spirals" },
+
+    // Add other club meetings here like "The Dreamers", "Iron City", etc.
+  ];
+
+  const personalTable = document.getElementById("personal-calendar");
+
+  // Clear existing rows
+  personalTable.innerHTML = "<tr><th>Date</th><th>Event</th></tr>";
+
+  // Filter and sort by date (convert to Date object for sorting)
+  const filteredMeetings = allMeetings
+    .filter(meeting => joinedClubs.includes(meeting.club))
+    .sort((a, b) => new Date(a.date) - new Date(b.date));
+
+  // Add rows to personal calendar
+  filteredMeetings.forEach(meeting => {
+    const row = document.createElement("tr");
+    row.innerHTML = `<td>${meeting.date}</td><td><em>${meeting.book}</em>: ${meeting.topic}</td>`;
+    personalTable.appendChild(row);
+  });
+});
 
 // Helper: Get joined clubs from localStorage
 function getJoinedClubs() {
