@@ -23,3 +23,10 @@ Repository for Virtual Book Club Capstone Project "Penguin Pages"
 8. When you've reached the Administrative Control Panel, navigate to Styles in the left sidebar and install/activate ppages
 
 9. Finally, you can visit "http://127.0.0.1:8000/website/home.html" to use the website. Unfortunately, the forums won't be set up in your installation, but you'll be able to review the HTML pages
+
+# Team Members
+- Carissa Case
+- Anne Norris
+- Jillian Berger
+- Matt Michaux
+- Graham Meldrum
